@@ -1,0 +1,363 @@
+PHASE 1
+REQUIREMENTS SPECIFICATION
+GROUP DETAILS
+Student Experience (SE) K00248239: Calum Tobin
+Admin Section (AD1) K00248239: Jim Conway
+Viewers (VS) K00259032: Laura O’Callaghan
+REQUIREMENTS LIST
+Student Experience (SE)
+1.	Create and manage student account – view, update, delete user details. Students should select what course they are from.
+2.	Log in as a student.
+3.	Manage all projects uploaded by student – view, add, update, delete – project information should include name of piece, some information about the piece etc. A project can have more than one project asset eg Word Document, Jpegs, PNGS, Video etc
+4.	Enter a project(s) for a showcase
+Admin Section (AD1)
+1.	Logon as admin
+2.	Create a new showcase
+3.	Update, delete showcases– should be allowed to enter show specific details (example name, aim of show etc.).
+4.	Manage projects in a showcase – add, update, delete, order that they are displayed
+Viewers (VS)                          (note to view a show you do not need to be a registered user on the site)
+1.	Landing page- view high level details of all shows currently live, top-rated piece etc
+2.	View showcase
+3.	View projects within any showcase (student name, info about the piece, contact details of a student, etc)
+4.	Add a comment about a project
+
+
+USE-CASES
+STUDENT EXPERIENCE (SE)
+ID: 	SE-1
+Title:	Create and manage student account
+Description:	The student creates and manages their account. The student can view, update, or delete their user details. The students also must select what course they are enrolled in.
+Primary Actor:	Student
+Pre-dependencies:	Student is on the webpage.
+Post-dependencies:	Student has created/managed their account.
+Main 
+Success Scenario:	
+1. Student selects create/manage account from the menu.
+2. System asked user to fill in their details. (Name, student email, password)
+3. The user then selects submit.
+4. The user is then asked which course they are enrolled in.
+5. The student then selects submit.
+Extensions/Exception
+ Handling:
+2a. The student email is not recognized.
+  -2a1. System displays error message saying that the email is not recognized.
+  -2a2. Student either backs out of this use case or tries again after rectifying the cause.
+4a. No courses are available for this student.
+  -4a1. System displays error message saying no courses are available and provides the reason & how to rectify if possible.
+  -4a2. Student either backs out of this use case or tries again after rectifying the cause.
+Frequency of Use:	Often
+Status:	Pending review
+Owner:	Calum Tobin
+Priority:	P1 - High
+
+
+ID: 	SE-2
+Title:	Login as student
+Description:	The student logs into the website
+Primary Actor:	Student
+Pre-dependencies:	Student is on the webpage.
+Post-dependencies:	Student has logged in.
+Main 
+Success Scenario:
+1. Student selects login from the menu.
+2. System asked user to fill in their details. (Student email, password)
+3. The user then selects submit.
+Extensions/Exception
+ Handling:
+2a. The student email or password is not recognized.
+  -2a1. System displays error message saying that either the email or password are incorrect.
+  -2a2. Student either backs out of this use case or tries again after rectifying the cause.
+Frequency of Use:	Very often
+Status:	Pending review
+Owner:	Calum Tobin
+Priority:	P1 - High
+ 
+ID: 	SE-3
+Title:	Manage all projects uploaded by student
+Description:	Manage all projects uploaded by student – view, add, update, or delete project information.
+Primary Actor:	Student
+Pre-dependencies:	Student is logged in.
+Post-dependencies:	Student manages their projects.
+Main 
+Success Scenario:	
+1. User selects their profile.
+2. System displays users profile page.
+3. User selects to manage their uploads.
+4. System displays the manage uploads page.
+5. User then edits the fields they want to change.
+6. User selects submit.
+7. System displays message confirming changes.
+Extensions/Exception
+ Handling:
+3a. The user has not uploaded any projects.
+  -3a1. The system displays message saying the user does not have any uploads and asks user to upload new project.
+6a. The system fails to save the project.
+  -6a1. System displays error message telling user that edits failed to save.
+  -6a2. Student either backs out of this use case or tries again after rectifying the cause.
+Frequency of Use:	Often
+Status:	Pending review
+Owner:	Calum Tobin
+Priority:	P3 - Medium
+
+ 
+ID: 	SE-4
+Title:	Enter a project(s) for a showcase
+Description:	The user enters a project for a showcase.
+Primary Actor:	Student
+Pre-dependencies:	Student is logged in.
+Post-dependencies:	The user has entered a project for a showcase.
+Main 
+Success Scenario:	
+1. The user selects their profile.
+2. System displays users profile page.
+3. User selects the showcase option.
+4. System displays the showcase page and asks user to select a showcase from the list.
+5. The user selects a showcase.
+6. The system asks the user to select a project to upload for the showcase.
+7. The user selects the project they wish to upload for the showcase.
+8. The system displays a message confirming the project has been uploaded.
+Extensions/Exception
+ Handling:	
+4a. There are no showcases available.
+  -4a1. The system displays message saying there are no showcases available.
+6a. The user has not uploaded any projects.
+  -6a1. The system displays message saying the user does not have any uploads and asks user to upload new project.
+8a. The system fails to upload the project to the showcase.
+  -8a1. System displays error message telling user that the project to the showcase.
+  -8a2. Student either backs out of this use case or tries again after rectifying the cause.
+Frequency of Use:	Somewhat often
+Status:	Pending review
+Owner:	Calum Tobin
+Priority:	P3 - Medium
+
+
+
+
+
+ADMIN SECTION (AD1)
+ID: 	#AD1 (1) – Admin Section/Jim
+Title:	Login as Lecturer/Admin
+Description:	User with correct Login details can Logon to system as administrator
+Primary Actor:	Lecturer/Admin
+Pre-dependencies:	1.	System must be connected to a network
+Post-dependencies:	1.	useCase #AD1 (2) Create new showcase
+2.	useCase #AD1 (3) Update, Delete showcase
+3.	useCase #AD1 (4) Manage showcase projects
+Main 
+Success Scenario:
+1.	AD1(1.1) actor selects Login and system displays admin login screen
+2.	AD1(1.2) actor enters correct admin username and password
+3.	AD1(1.3) system validates entered name and password, logs the actor into the system and displays home screen () with 4-options minimum: 
+i.	AD1 (2) create a new showcase
+ii.	AD1 (3) update/delete showcase
+iii.	AD1 (4) manage showcase projects
+iv.	Logout/exit
+Extensions/Exception
+ Handling:	1.	actor enters incorrect username or password
+2.	system responds by resetting fields and displaying error message
+Frequency of Use:	daily
+Status:	pending
+Owner:	Jim Conway //IDM3-K00234014
+Priority:	1  High/Essential
+
+
+ID: 	AD1 (2)  Admin Section/Jim
+Title:	Create a new Showcase
+Description:	An administrator can create and manage a new showcase of work
+Primary Actor:	Lecturer/Admin
+Pre-dependencies:
+1.	System must be connected to a network
+2.	#AD1 (1) user/admin login had been executed successfully 
+Post-dependencies:	1.	useCase #VS (1) viewer landing page high level details of live shows, top rated
+2.	useCase #VS (2) View a showcase
+3.	useCase #VS (3) view projects within a showcase
+Main 
+Success Scenario:	
+1.	AD1 (2.1) User selects AD1 (2) create a new showcase option from admin login home screen 
+2.	AD1 (2.2) system displays screen with form options. Form includes: 
+a.	showcase title
+b.	showcase aim 
+c.	add projects/system displays list of submitted projects for showcase, 
+d.	display order 
+e.	showcase launch date/live
+3.	AD1 (2.3) Actor enters all the correct data for a new showcase and clicks save to add new showcase to the system
+4.	AD1 (2.4) system adds new showcase to system and displays showcase list/dashboard with exit option and/or updated dashboard home screen
+5.	AD1 (2.5) user clicks exit option
+6.	AD1 (2.6) system responds by displaying admin login home screen with 4-options minimum:
+i.	AD1 (2) create a new showcase
+ii.	AD1 (3) update/delete showcase
+iii.	AD1 (4) manage showcase projects
+iv.	Logout/exit
+Extensions/Exception
+ Handling:	
+1.	User enters historic date for showcase launch
+2.	System responds by clearing field and displaying error message
+Frequency of Use:	weekly
+Status:	Under development: USE-CASE REQS stage
+Owner:	Jim Conway //IDM3-K00234014
+Priority:	1  High/Essential
+
+ID: 	AD1(3)  Admin Section/Jim
+Title:	Update and Delete Showcase
+Description:	An Administrator can add or update or delete content and enter show specific details (example name, aim of show etc.)
+Primary Actor:	Lecturer/Admin
+Pre-dependencies:	
+1.	System must be connected to a network
+2.	useCase #AD1 (1) user/admin login had been executed successfully
+Post-dependencies:	
+1.	useCase #VS (1) viewer landing page high level details of live shows, top rated...
+2.	useCase #VS (2) View a showcase
+3.	useCase #VS (3) view projects within a showcase
+Main 
+Success Scenario:	
+1.	System displays all showcases
+2.	User selects a showcase to update/delete
+3.	System displays showcase with editable fields: name of show, aim/description of show, start date/live with option to update or delete or exit
+4.	User updates required fields and clicks save/update
+5.	System saves updated showcase to the system and displays all showcases
+6.	User selects a showcase to update/delete
+7.	System displays showcase with editable fields: name of show, aim/description of show, start date/live with option to update or delete or exit
+8.	User selects showcase delete option
+9.	System responds with a dialog box asking if user sure wants to delete showcase
+10.	User clicks yes
+11.	The system deletes the show case and displays list of all showcases with options to update and delete or exit
+12.	User clicks exit
+13.	system responds by displaying admin login home screen with 4-options minimum:
+i.	AD1 (2) create a new showcase
+ii.	AD1 (3) update/delete showcase
+iii.	AD1 (4) manage showcase projects
+iv.	Logout/exit
+Extensions/Exception
+ Handling:	1.	Confirm dialog box for delete showcase option
+Frequency of Use:	Daily
+Status:	Under development: USE-CASE REQS stage
+Owner:	Jim Conway //IDM3-K00234014
+Priority:	2  Medium to High
+
+
+ID: 	AD1(4)  Admin Section/Jim
+Title:	Manage Projects in Showcase
+Description:	An administrator can add, update, delete, order displayed in etc.
+Primary Actor:	Lecturer/admin
+Pre-dependencies:	
+1.	System must be connected to a network
+2.	useCase #AD1 (1) user/admin login had been executed successfully
+Post-dependencies:	
+1.	useCase #VS (1) viewer landing page high level details of live shows, top rated...
+2.	useCase #VS (2) View a showcase
+3.	useCase #VS (3) view projects within a showcase
+Main 
+Success Scenario:	
+1.	System displays all showcases
+2.	User selects a showcase to manage its projects
+3.	System displays all showcase projects
+4.	User selects a project to manage
+5.	System displays project content with editable fields 
+6.	User updates required fields and click save
+7.	System updates project/showcase and displays admin login home screen with 4-options minimum:
+8.	AD1 (2) create a new showcase
+9.	AD1 (3) update/delete showcase
+10.	AD1 (4) manage showcase projects
+11.	Logout/exit
+Extensions/Exception
+ Handling:	
+1.	User enters historic date for showcase launch
+2.	System responds by clearing field and displaying error message
+3.	Confirm dialog box for delete showcase option
+Frequency of Use:	Daily
+Status:	Under development: USE-CASE REQS stage
+Owner:	Jim Conway //IDM3-K00234014
+Priority:	2  Medium to High
+
+VIEWERS (VS)
+ID: 	VS(1)
+Title:	View Home Page
+Description:	Viewer views home page
+Primary Actor:	Viewer
+Pre-dependencies:	Viewer has internet
+Post-dependencies:	Viewer sees home page
+Main 
+Success Scenario:	
+1.	Viewer clicks link to website
+2.	System displays website home page
+Extensions/Exception
+ Handling:	
+2a. System does not load website.                                                       ---2a1.System shows error message saying there was a problem loading the website.                                                                                 ---2a2. Viewer refreshes page or backs out of use case.
+Frequency of Use:	Daily
+Status:	Pending review
+Owner:	Laura O’Callaghan
+Priority:	High
+
+
+ID: 	VS(2)
+Title:	View Showcase
+Description:	Viewer views showcase
+Primary Actor:	Viewer
+Pre-dependencies:	Viewer is on page with showcases
+Post-dependencies:	Viewer has viewed showcase
+Main 
+Success Scenario:	
+1.	Viewer scrolls to find showcase they wish to view
+2.	Viewer clicks onto showcase
+3.	System displays showcase
+Extensions/Exception
+ Handling:	
+1a. No showcases are showed on system.                                          
+---1a1. System shows message saying no showcases are available   
+---1a2. Viewer either refreshes pages or backs out of use case
+
+3a. Error loading showcase.                                                                     
+---3a1. System shows error message saying there was a problem loading showcase
+---3a2. Viewer either refreshes page or backs out of use case
+Frequency of Use:	Daily
+Status:	Pending review
+Owner:	Laura O’Callaghan
+Priority:	High
+
+
+
+
+ID: 	VS(3)
+Title:	View Projects within showcase
+Description:	Viewer views projects in any showcase
+Primary Actor:	Viewer
+Pre-dependencies:	Viewer has viewed showcase
+Post-dependencies:	Viewer has viewed projects within showcase
+Main 
+Success Scenario:	
+1.	Viewer clicks onto link to show projects in showcase
+2.	System shows projects within showcase
+Extensions/Exception
+ Handling:	
+2a. No projects show up in showcase                                                  
+---2a1. System shows message saying there is no projects in the showcase.                                  
+---2a2. User backs out of use case or refreshes page.
+Frequency of Use:	Daily
+Status:	Pending review
+Owner:	Laura O’Callaghan
+Priority:	High
+
+
+
+ID: 	VS(4)
+Title:	Add Comment
+Description:	User adds a comment to a project
+Primary Actor:	User
+Pre-dependencies:	
+1.	Viewer has logged into system.
+2.	User has viewed showcase projects.
+Post-dependencies:	User has added a comment
+Main 
+Success Scenario:	
+1.	User scrolls to find comments and clicks add comment
+2.	User types comment and clicks done or presses enter
+3.	System uploads comment to project
+Extensions/Exception
+ Handling:	3a. Comment does not upload                                                               ---3a1. An error message shows saying there was a problem uploading the comment.                           ---3a2. User retries typing the comment  or backs out of the use case.  
+Frequency of Use:	Daily
+Status:	Pending review
+Owner:	Laura O’Callaghan
+Priority:	High
+
+
+
